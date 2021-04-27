@@ -1,12 +1,21 @@
 import datetime
 from django.conf import settings
 from django.utils import timezone
-from puzzles.messaging import send_mail_wrapper
 
-# included in various templates
+# included in various templates. NOTE, sometimes appears with a "the" before
+# it, maybe check those are what you want.
 HUNT_TITLE = 'FIXME Puzzle Hunt'
+
+# included in various templates and displayed on the static site
 HUNT_ORGANIZERS = 'FIXME Puzzlesetters'
+
+# included in various templates and set as reply-to for automatic emails
 CONTACT_EMAIL = 'FIXME@example.com'
+
+# the sender from which automatic emails are sent; your mail sending service
+# might require you set this to something (check settings/base.py to put your
+# actual mail sending service credentials)
+MESSAGING_SENDER_EMAIL = 'no-reply@FIXME.example.com'
 
 # Change this to True to reveal the story page to everyone.
 STORY_PAGE_VISIBLE = False
@@ -48,10 +57,10 @@ HINTS_ENABLED = True
 HINTS_PER_DAY = 2
 DAYS_BEFORE_HINTS = 3
 
-# reasonable settings are 1, True;
-# set to 0, False to let teams get hints right away after signing up in the
-# middle of the hunt; probably useful to try out the hint interface
-TEAM_AGE_IN_DAYS_BEFORE_HINTS = 1
+# reasonable settings are datetime.timedelta(days=1), True; set to None, False
+# to let teams get hints right away after signing up in the middle of the hunt;
+# probably useful to try out the hint interface
+TEAM_AGE_BEFORE_HINTS = datetime.timedelta(days=1)
 CAP_HINTS_BY_TEAM_AGE = True
 
 FREE_ANSWERS_ENABLED = True

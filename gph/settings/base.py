@@ -134,6 +134,24 @@ EMAIL_PORT = 'FIXME'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_SUBJECT_PREFIX = '[FIXME Puzzle Hunt] '
 
+# https://docs.djangoproject.com/en/3.1/topics/logging/
+
+# Loggers and handlers both have a log level; handlers ignore messages at lower
+# levels. This is useful because a logger can have multiple handlers with
+# different log levels.
+
+# The levels are DEBUG < INFO < WARNING < ERROR < CRITICAL. DEBUG logs a *lot*,
+# like exceptions every time a template variable is looked up and missing,
+# which happens literally all the time, so that might be a bit too much.
+
+# If you want to log to stdout (e.g. on Heroku), the handler looks as follows:
+# {
+#     'level': 'INFO',
+#     'class': 'logging.StreamHandler',
+#     'stream': sys.stdout,
+#     'formatter': 'django',
+# },
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -149,19 +167,19 @@ LOGGING = {
     # /srv/logs/django.log or similar
     'handlers': {
         'django': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'stream': sys.stdout,
             'formatter': 'django',
         },
         'puzzle': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'stream': sys.stdout,
             'formatter': 'puzzles',
         },
         'request': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.StreamHandler',
             'stream': sys.stdout,
             'formatter': 'puzzles',
@@ -170,17 +188,17 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['django'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True,
         },
         'puzzles.puzzle': {
             'handlers': ['puzzle'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
         },
         'puzzles.request': {
             'handlers': ['request'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': False,
         },
     },
