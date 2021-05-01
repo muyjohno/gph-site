@@ -4,18 +4,18 @@ from django.utils import timezone
 
 # included in various templates. NOTE, sometimes appears with a "the" before
 # it, maybe check those are what you want.
-HUNT_TITLE = 'FIXME Puzzle Hunt'
+HUNT_TITLE = 'Misremembered Puzzle Hunt'
 
 # included in various templates and displayed on the static site
-HUNT_ORGANIZERS = 'FIXME Puzzlesetters'
+HUNT_ORGANIZERS = 'Misremembered Apple'
 
 # included in various templates and set as reply-to for automatic emails
-CONTACT_EMAIL = 'FIXME@example.com'
+CONTACT_EMAIL = 'misremembered@misremembered.pythonanywhere.com'
 
 # the sender from which automatic emails are sent; your mail sending service
 # might require you set this to something (check settings/base.py to put your
 # actual mail sending service credentials)
-MESSAGING_SENDER_EMAIL = 'no-reply@FIXME.example.com'
+MESSAGING_SENDER_EMAIL = 'no-reply@misremembered.pythonanywhere.com'
 
 # Change this to True to reveal the story page to everyone.
 STORY_PAGE_VISIBLE = False
@@ -24,28 +24,28 @@ ERRATA_PAGE_VISIBLE = False
 # Change this to True when the wrapup exists.
 WRAPUP_PAGE_VISIBLE = False
 # Change this to True to start showing post-solve surveys to teams.
-SURVEYS_AVAILABLE = True
+SURVEYS_AVAILABLE = False
 
 HUNT_START_TIME = timezone.make_aware(datetime.datetime(
-    year=9001,
-    month=1,
-    day=1,
-    hour=0,
+    year=2021,
+    month=9,
+    day=3,
+    hour=18,
     minute=0,
 ))
 
 HUNT_END_TIME = timezone.make_aware(datetime.datetime(
-    year=9002,
-    month=1,
-    day=1,
+    year=2021,
+    month=9,
+    day=6,
     hour=0,
     minute=0,
 ))
 
 HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
-    year=9003,
-    month=1,
-    day=1,
+    year=2021,
+    month=9,
+    day=6,
     hour=0,
     minute=0,
 ))
@@ -63,7 +63,7 @@ DAYS_BEFORE_HINTS = 3
 TEAM_AGE_BEFORE_HINTS = datetime.timedelta(days=1)
 CAP_HINTS_BY_TEAM_AGE = True
 
-FREE_ANSWERS_ENABLED = True
+FREE_ANSWERS_ENABLED = False
 DAYS_BEFORE_FREE_ANSWERS = 6
 CAP_FREE_ANSWERS_BY_TEAM_AGE = True
 # Free answers are given out each day after helpers.DAYS_BEFORE_FREE_ANSWERS.
