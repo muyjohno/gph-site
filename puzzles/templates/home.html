@@ -86,8 +86,7 @@ to let us know what you thought about the hunt.
     <div class="four columns">
         <h3>Who</h3>
         <p>
-            This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by FIXME.
-            {# It is the follow-up to the previous <a href="{% url 'archive' %}">FIXME Puzzle Hunts</a>. #}
+            This {% if hunt_is_closed %}was{% else %}is{% endif %} a puzzlehunt run by {{ hunt_organizers }}.
             {% if not hunt_is_closed %}
             Registration is open! Be sure to check out the
             <a href="{% url 'rules' %}">rules</a> and <a href="{% url 'faq' %}">FAQ</a>
@@ -102,7 +101,7 @@ to let us know what you thought about the hunt.
     <a href="{% url 'register' %}" class="btn">Register your team!</a>
 </div>
 <h3 class="print-register">
-    <a>Register at https://FIXME/</a>
+    <a>Register at {% url 'register' %}</a>
 </h3>
 {% endif %}
 

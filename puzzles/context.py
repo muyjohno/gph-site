@@ -15,6 +15,7 @@ from puzzles.hunt_config import (
     STORY_PAGE_VISIBLE,
     ERRATA_PAGE_VISIBLE,
     WRAPUP_PAGE_VISIBLE,
+    ARCHIVE_PAGE_VISIBLE,
     HUNT_START_TIME,
     HUNT_END_TIME,
     HUNT_CLOSE_TIME,
@@ -120,6 +121,9 @@ class BaseContext:
 
     def is_wrapup_page_visible(self):
         return WRAPUP_PAGE_VISIBLE
+
+    def is_archive_page_visible(self):
+        return ARCHIVE_PAGE_VISIBLE
 
     def hints_per_day(self):
         if HINTS_ENABLED:

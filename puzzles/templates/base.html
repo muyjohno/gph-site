@@ -62,9 +62,11 @@
                     Wrap-Up
                 </a>
                 {% endif %}
+                {% if is_archive_page_visible %}
                 <a{% if request.path == '/archive' %} class="selected-tab"{% endif %} href="{% url 'archive' %}">
                     Archive
                 </a>
+                {% endif %}
             </div>
             <div class="top-left-actions">
                 {% block top-left-actions %}{% endblock %}

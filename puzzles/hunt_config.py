@@ -26,26 +26,28 @@ WRAPUP_PAGE_VISIBLE = False
 # Change this to True to start showing post-solve surveys to teams.
 SURVEYS_AVAILABLE = False
 
+ARCHIVE_PAGE_VISIBLE = False
+
 HUNT_START_TIME = timezone.make_aware(datetime.datetime(
     year=2021,
-    month=9,
-    day=3,
+    month=5,
+    day=1,
     hour=18,
     minute=0,
 ))
 
 HUNT_END_TIME = timezone.make_aware(datetime.datetime(
     year=2021,
-    month=9,
-    day=6,
+    month=5,
+    day=31,
     hour=0,
     minute=0,
 ))
 
 HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
     year=2021,
-    month=9,
-    day=6,
+    month=5,
+    day=31,
     hour=0,
     minute=0,
 ))
